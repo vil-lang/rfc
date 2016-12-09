@@ -17,7 +17,7 @@ The `loc` field represents the source location information of the node. If the n
 
 ```js
 interface SourceLocation {
-  node: Object | null;
+	node: Object | null;
 	parent: Object | null;
 	children: [ Object ] | null;
 }
@@ -57,11 +57,11 @@ A `Document` is the root of an _AVT_.
 
 ```js
 interface Document <: Layer {
-  version: '1.0.0',
-  type: 'document';
-  source: SourceType;
+	version: '1.0.0',
+	type: 'document';
+	source: SourceType;
 	parent: null;
-  children: [ Artboard ];
+	children: [ Artboard ];
 }
 ```
 
@@ -105,7 +105,7 @@ An `Image` contains one or more `BitmapData` layers.
 ```js
 interface ImageElement <: Element {
 	type: 'ImageElement';
-  children: [ BitmapData ];
+	children: [ BitmapData ];
 }
 ```
 
@@ -349,3 +349,22 @@ interface Symbol <: Layer {
 	children: [ Layer ];
 }
 ```
+
+- - - -
+#vil/todo
+
+* Should I add font attributes and colors to TextValue? Defer it? Refactor `TextElement`?
+* `FontAttribute` seems really complex. Split it?
+* Some values and attributes are the same. Is it useful? Is there another way to define those _mixed_ types.
+* Still some properties of `Layer` that are not used in some inheriting nodes.
+- - - -
+#vil/v2
+
+```js
+interface ImageElement {
+	filters: [ FilterAttribute ]; // v2
+}
+```
+
+- - - -
+#vil
