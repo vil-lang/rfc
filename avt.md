@@ -58,7 +58,7 @@ A `Document` is the root of an _AVT_.
 ```js
 interface Document <: Layer {
 	version: '1.0.0',
-	type: 'document';
+	type: 'Document';
 	source: SourceType;
 	parent: null;
 	children: [ Artboard ];
@@ -80,7 +80,7 @@ An `Artboard` is the root a subtree of layers that represents a meaningful unit 
 
 ```js
 interface Artboard <: Layer {
-	type: 'artboard';
+	type: 'Artboard';
 	parent: Document;
 	children: [ Layer ];
 }
